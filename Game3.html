@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BattleZone Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Orbitron',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:#0f0f0f;
+color:white;
+}
+
+/* HERO */
+
+.hero{
+height:100vh;
+background:
+linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.7)),
+url('https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=1600&q=80');
+background-size:cover;
+background-position:center;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+}
+
+.hero h1{
+font-size:90px;
+color:#ffb300;
+text-shadow:0 0 20px #ffb300;
+}
+
+.hero p{
+font-size:24px;
+margin-top:20px;
+}
+
+.btn{
+display:inline-block;
+margin-top:30px;
+padding:15px 35px;
+background:#ffb300;
+color:black;
+font-weight:bold;
+text-decoration:none;
+border-radius:40px;
+}
+
+/* NAV */
+
+nav{
+position:fixed;
+width:100%;
+top:0;
+background:rgba(0,0,0,.8);
+padding:15px;
+text-align:center;
+z-index:999;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin:0 20px;
+}
+
+/* TITLES */
+
+.title{
+text-align:center;
+font-size:50px;
+margin:60px 0;
+color:#ffb300;
+}
+
+/* STATS */
+
+.stats{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+padding:30px;
+}
+
+.stat{
+background:#1c1c1c;
+padding:30px;
+border-radius:15px;
+text-align:center;
+border:1px solid #333;
+}
+
+.stat h2{
+color:#ffb300;
+}
+
+/* WEAPONS */
+
+.weapons{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:25px;
+padding:30px;
+}
+
+.card{
+background:#1a1a1a;
+border-radius:15px;
+overflow:hidden;
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+}
+
+.card img{
+width:100%;
+height:250px;
+object-fit:cover;
+}
+
+.card-content{
+padding:20px;
+}
+
+.card-content h3{
+color:#ffb300;
+}
+
+/* ACHIEVEMENTS */
+
+.achievements{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+padding:30px;
+}
+
+.badge{
+background:#1c1c1c;
+padding:25px;
+border-radius:15px;
+text-align:center;
+}
+
+/* CONTACT */
+
+.contact{
+max-width:700px;
+margin:auto;
+padding:40px;
+}
+
+.contact input,
+.contact textarea{
+width:100%;
+padding:15px;
+margin:10px 0;
+background:#1c1c1c;
+border:none;
+color:white;
+}
+
+.contact button{
+padding:15px 35px;
+background:#ffb300;
+border:none;
+cursor:pointer;
+font-weight:bold;
+}
+
+/* FOOTER */
+
+footer{
+background:#111;
+text-align:center;
+padding:30px;
+margin-top:50px;
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+<a href="#stats">Stats</a>
+<a href="#weapons">Weapons</a>
+<a href="#achievements">Achievements</a>
+<a href="#contact">Contact</a>
+</nav>
+
+<section class="hero">
+
+<div>
+
+<h1>BATTLE ZONE</h1>
+
+<p>
+Elite Warrior • Survival Expert • Squad Leader
+</p>
+
+<a href="#stats" class="btn">
+ENTER BATTLEFIELD
+</a>
+
+</div>
+
+</section>
+
+<h2 class="title" id="stats">
+PLAYER STATS
+</h2>
+
+<section class="stats">
+
+<div class="stat">
+<h2>1250+</h2>
+<p>Matches Played</p>
+</div>
+
+<div class="stat">
+<h2>380</h2>
+<p>Chicken Dinners</p>
+</div>
+
+<div class="stat">
+<h2>5.8</h2>
+<p>KD Ratio</p>
+</div>
+
+<div class="stat">
+<h2>Ace Master</h2>
+<p>Highest Rank</p>
+</div>
+
+</section>
+
+<h2 class="title" id="weapons">
+FAVORITE LOADOUT
+</h2>
+
+<section class="weapons">
+
+<div class="card">
+<img src="https://picsum.photos/600/400?random=11">
+<div class="card-content">
+<h3>Assault Rifle</h3>
+<p>Reliable medium-range combat weapon.</p>
+</div>
+</div>
+
+<div class="card">
+<img src="https://picsum.photos/600/400?random=12">
+<div class="card-content">
+<h3>Sniper Rifle</h3>
+<p>High damage long-range eliminations.</p>
+</div>
+</div>
+
+<div class="card">
+<img src="https://picsum.photos/600/400?random=13">
+<div class="card-content">
+<h3>SMG</h3>
+<p>Fast-paced close combat dominance.</p>
+</div>
+</div>
+
+</section>
+
+<h2 class="title" id="achievements">
+ACHIEVEMENTS
+</h2>
+
+<section class="achievements">
+
+<div class="badge">
+🏆 Conqueror Tier
+</div>
+
+<div class="badge">
+🔥 20 Kill Match
+</div>
+
+<div class="badge">
+🎯 Sharp Shooter
+</div>
+
+<div class="badge">
+👑 Squad MVP
+</div>
+
+</section>
+
+<h2 class="title">
+SQUAD MEMBERS
+</h2>
+
+<section class="stats">
+
+<div class="stat">
+🎮 Alpha
+</div>
+
+<div class="stat">
+🎮 Bravo
+</div>
+
+<div class="stat">
+🎮 Charlie
+</div>
+
+<div class="stat">
+🎮 Delta
+</div>
+
+</section>
+
+<h2 class="title" id="contact">
+JOIN THE SQUAD
+</h2>
+
+<section class="contact">
+
+<input type="text" placeholder="Player Name">
+
+<input type="email" placeholder="Email">
+
+<textarea rows="5" placeholder="Message"></textarea>
+
+<button>
+SEND REQUEST
+</button>
+
+</section>
+
+<footer>
+
+<h2>BATTLE ZONE PORTFOLIO</h2>
+
+<p>
+Winner Winner Chicken Dinner 🏆
+</p>
+
+</footer>
+<marquee><audio src="C:\Users\NK NAVEEN\Downloads\bgm.mp3.mpeg"
+ controls=autoplay></audio></marquee>
+
+</body>
+</html>
