@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Green Forest Portfolio</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:#eef7ee;
+color:#222;
+}
+
+/* HERO */
+
+.hero{
+height:100vh;
+background:
+linear-gradient(rgba(0,0,0,.4),rgba(0,0,0,.5)),
+url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1600');
+background-size:cover;
+background-position:center;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+color:white;
+}
+
+.hero h1{
+font-size:80px;
+}
+
+.hero p{
+font-size:25px;
+margin-top:15px;
+}
+
+.btn{
+display:inline-block;
+margin-top:25px;
+padding:15px 35px;
+background:#4caf50;
+color:white;
+text-decoration:none;
+border-radius:40px;
+}
+
+/* TITLES */
+
+.title{
+text-align:center;
+margin:60px 0 30px;
+font-size:45px;
+color:#2e7d32;
+}
+
+/* STATS */
+
+.stats{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+padding:30px;
+}
+
+.stat{
+background:white;
+padding:30px;
+border-radius:15px;
+text-align:center;
+box-shadow:0 5px 10px rgba(0,0,0,.1);
+}
+
+.stat h2{
+color:#4caf50;
+}
+
+/* TREES */
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
+padding:30px;
+}
+
+.card{
+background:white;
+border-radius:15px;
+overflow:hidden;
+box-shadow:0 5px 15px rgba(0,0,0,.1);
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+}
+
+.card img{
+width:100%;
+height:220px;
+object-fit:cover;
+}
+
+.card-content{
+padding:20px;
+}
+
+/* ANIMALS */
+
+.animals{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+padding:30px;
+}
+
+.animal{
+background:white;
+padding:25px;
+border-radius:15px;
+text-align:center;
+box-shadow:0 5px 15px rgba(0,0,0,.1);
+}
+
+/* OXYGEN */
+
+.calc{
+max-width:600px;
+margin:auto;
+background:white;
+padding:30px;
+border-radius:15px;
+box-shadow:0 5px 15px rgba(0,0,0,.1);
+text-align:center;
+}
+
+.calc input{
+width:100%;
+padding:12px;
+margin:15px 0;
+}
+
+.calc button{
+padding:12px 30px;
+background:#4caf50;
+border:none;
+color:white;
+cursor:pointer;
+}
+
+.result{
+margin-top:20px;
+font-size:20px;
+font-weight:bold;
+}
+
+/* LAYERS */
+
+.layers{
+max-width:900px;
+margin:auto;
+padding:30px;
+}
+
+.layer{
+background:white;
+margin:15px 0;
+padding:20px;
+border-left:6px solid green;
+border-radius:10px;
+}
+
+/* FOOTER */
+
+footer{
+background:#1b5e20;
+color:white;
+text-align:center;
+padding:30px;
+margin-top:50px;
+}
+
+</style>
+</head>
+<body>
+
+<section class="hero">
+<div>
+<h1>GREEN FOREST</h1>
+<p>Protect Forests • Protect Life</p>
+<a href="#stats" class="btn">Explore Forest</a>
+</div>
+</section>
+
+<h2 class="title" id="stats">Forest Statistics</h2>
+
+<section class="stats">
+
+<div class="stat">
+<h2>🌳 3.04 Trillion</h2>
+<p>Trees Worldwide</p>
+</div>
+
+<div class="stat">
+<h2>🐘 8.7 Million+</h2>
+<p>Species</p>
+</div>
+
+<div class="stat">
+<h2>🌍 31%</h2>
+<p>Earth Covered By Forests</p>
+</div>
+
+<div class="stat">
+<h2>💧 75%</h2>
+<p>Fresh Water Sources</p>
+</div>
+
+</section>
+
+<h2 class="title">Tree Species</h2>
+
+<section class="cards">
+
+<div class="card">
+<img src="https://picsum.photos/500/300?tree1">
+<div class="card-content">
+<h3>Neem Tree</h3>
+<p>Known for medicinal properties.</p>
+</div>
+</div>
+
+<div class="card">
+<img src="https://picsum.photos/500/300?tree2">
+<div class="card-content">
+<h3>Banyan Tree</h3>
+<p>India's national tree.</p>
+</div>
+</div>
+
+<div class="card">
+<img src="https://picsum.photos/500/300?tree3">
+<div class="card-content">
+<h3>Bamboo</h3>
+<p>Fast growing eco-friendly plant.</p>
+</div>
+</div>
+
+</section>
+
+<h2 class="title">Wildlife Kingdom</h2>
+
+<section class="animals">
+
+<div class="animal">
+<h2>🐘 Elephant</h2>
+<p>Largest land mammal.</p>
+</div>
+
+<div class="animal">
+<h2>🐅 Tiger</h2>
+<p>Apex predator of forests.</p>
+</div>
+
+<div class="animal">
+<h2>🦌 Deer</h2>
+<p>Important herbivore species.</p>
+</div>
+
+<div class="animal">
+<h2>🐒 Monkey</h2>
+<p>Highly intelligent primates.</p>
+</div>
+
+</section>
+
+<h2 class="title">Oxygen Calculator</h2>
+
+<section class="calc">
+
+<input
+type="number"
+id="trees"
+placeholder="Enter Number of Trees">
+
+<button onclick="calculate()">
+Calculate
+</button>
+
+<div class="result" id="result"></div>
+
+</section>
+
+<h2 class="title">Forest Layers</h2>
+
+<section class="layers">
+
+<div class="layer">
+<h3>☁ Emergent Layer</h3>
+<p>Tallest trees reaching sunlight.</p>
+</div>
+
+<div class="layer">
+<h3>🌳 Canopy Layer</h3>
+<p>Main forest roof supporting wildlife.</p>
+</div>
+
+<div class="layer">
+<h3>🌿 Understory Layer</h3>
+<p>Small trees and shrubs.</p>
+</div>
+
+<div class="layer">
+<h3>🍂 Forest Floor</h3>
+<p>Decomposing leaves and nutrients.</p>
+</div>
+
+</section>
+
+<footer>
+
+<h2>Green Forest Portfolio</h2>
+
+<p>🌱 Every Tree Matters</p>
+
+</footer>
+
+<script>
+
+function calculate(){
+
+let trees =
+document.getElementById("trees").value;
+
+let oxygen = trees * 118;
+
+document.getElementById("result")
+.innerHTML =
+"🌿 Estimated Oxygen Production: "
++ oxygen +
+" kg/year";
+
+}
+
+</script>
+
+</body>
+</html>
