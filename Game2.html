@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>3D FPS Shooter</title>
+<style>
+body { margin:0; overflow:hidden; }
+#info{
+    position:absolute;
+    top:10px;
+    left:10px;
+    color:white;
+    font-family:Arial;
+    z-index:100;
+}
+</style>
+</head>
+<body>
+
+<div id="info">
+Click Screen To Start<br>
+WASD = Move<br>
+Mouse = Look<br>
+Left Click = Shoot
+</div>
+
+<script type="module">
+import * as THREE from 'https://unpkg.com/three@0.165.0/build/three.module.js';
+import { PointerLockControls }
+from 'https://unpkg.com/three@0.165.0/examples/jsm/controls/PointerLockControls.js';
+
+const scene = new THREE.Scene();
+scene.background = new THREE.Color(0x202020);
+
+const camera = new THREE.PerspectiveCamera(
+75,
+window.innerWidth/window.innerHeight,
+0.1,
+1000
+);
+
+const renderer = new THREE.WebGLRenderer({antialias:true});
+renderer.setSize(window.innerWidth,window.innerHeight);
+document.body.appendChild(renderer.domElement);
+
+const light = new THREE.DirectionalLight(0xffffff,2);
+light.position.set(10,20,10);
+scene.add(light);
+
+scene.add(new THREE.AmbientLight(0xffffff,0.5));
+
+const floorGeo = new THREE.PlaneGeometry(200,200);
+const floorMat = new THREE.MeshStandardMaterial({
+color:0x444444
+});
+
+const floor = new THREE.Mesh(floorGeo,floorMat);
+floor.rotation.x = -Math.PI/2;
+scene.add(floor);
+
+const controls = new PointerLockControls(camera,document.body);
+
+document.addEventListener("click",()=>{
+controls.lock();
+});
+
+scene.add(controls.getObject());
+
+camera.position.y = 2;
+
+const enemies = [];
+
+for(let i=0;i<15;i++){
+
+    const enemy = new THREE.Mesh(
+        new THREE.BoxGeometry(2,2,2),
+        new THREE.MeshStandardMaterial({
+            color:0xff0000
+        })
+    );
+
+    enemy.position.set(
+        Math.random()*100-50,
+        1,
+        Math.random()*100-50
+    );
+
+    scene.add(enemy);
+    enemies.push(enemy);
+}
+
+const keys = {};
+
+document.addEventListener("keydown",
+e=>keys[e.code]=true);
+
+document.addEventListener("keyup",
+e=>keys[e.code]=false);
+
+const raycaster = new THREE.Raycaster();
+
+document.addEventListener("mousedown",()=>{
+
+    raycaster.setFromCamera(
+        new THREE.Vector2(0,0),
+        camera
+    );
+
+    const hits =
+    raycaster.intersectObjects(enemies);
+
+    if(hits.length){
+
+        scene.remove(hits[0].object);
+
+        const idx =
+        enemies.indexOf(hits[0].object);
+
+        if(idx>-1){
+            enemies.splice(idx,1);
+        }
+    }
+});
+
+function move(){
+
+    const speed = 0.15;
+
+    if(keys["KeyW"])
+        controls.moveForward(speed);
+
+    if(keys["KeyS"])
+        controls.moveForward(-speed);
+
+    if(keys["KeyA"])
+        controls.moveRight(-speed);
+
+    if(keys["KeyD"])
+        controls.moveRight(speed);
+}
+
+function animate(){
+
+    requestAnimationFrame(animate);
+
+    move();
+
+    renderer.render(scene,camera);
+}
+
+animate();
+
+window.addEventListener("resize",()=>{
+
+    camera.aspect =
+    window.innerWidth/window.innerHeight;
+
+    camera.updateProjectionMatrix();
+
+    renderer.setSize(
+        window.innerWidth,
+        window.innerHeight
+    );
+});
+</script>
+
+</body>
+</html>
